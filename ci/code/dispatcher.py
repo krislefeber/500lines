@@ -35,7 +35,7 @@ def dispatch_tests(server, commit_id):
                 if commit_id in server.pending_commits:
                     server.pending_commits.remove(commit_id)
                 return
-        time.sleep(2)
+        time.sleep(25)
 
 
 class ThreadingTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
@@ -131,7 +131,7 @@ def serve():
             server.runners.remove(runner)
 
         while not server.dead:
-            time.sleep(1)
+            time.sleep(10)
             for runner in server.runners:
                 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 try:

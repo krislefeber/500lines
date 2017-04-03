@@ -2,7 +2,7 @@
 
 source run_or_fail.sh
 
-# delete previous id 
+# delete previous id
 rm -f .commit_id
 
 # go to repo and update it to given commit
@@ -19,7 +19,7 @@ fi
 COMMIT_ID=`echo $COMMIT | awk '{ print $2 }'`
 
 # update the repo
-run_or_fail "Could not pull from repository" git pull
+run_or_fail "Could not pull from repository" git pull origin master
 
 # get the most recent commit
 COMMIT=$(run_or_fail "Could not call 'git log' on repository" git log -n1)
