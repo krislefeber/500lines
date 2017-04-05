@@ -19,7 +19,7 @@ fi
 COMMIT_ID=`echo $COMMIT | awk '{ print $2 }'`
 
 # update the repo
-run_or_fail "Could not pull from repository" git pull origin master
+run_or_fail "Could not pull from repository. A remote repository named origin must exist" git pull origin master --quiet
 
 # get the most recent commit
 COMMIT=$(run_or_fail "Could not call 'git log' on repository" git log -n1)

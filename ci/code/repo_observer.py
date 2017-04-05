@@ -26,6 +26,8 @@ def poll():
                         action="store")
     parser.add_argument("repo", metavar="REPO", type=str,
                         help="path to the repository this will observe")
+    parser.add_argument("remote", metavar="REMOTE", type=str,
+                        help="path to remote repository to pull in")
     args = parser.parse_args()
     dispatcher_host, dispatcher_port = args.dispatcher_server.split(":")
     while True:
